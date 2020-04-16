@@ -36,14 +36,17 @@ target_link_libraries(SVMT Qt5::Core Qt5::Widgets)
 file(GLOB QT_DLLS "${CMAKE_SOURCE_DIR}/Qt/lib/${OS}/${COMP}/debug/*")
 set(QT_PLATFORMS "${CMAKE_SOURCE_DIR}/Qt/lib/${OS}/${COMP}/debug/platforms")
 
-add_custom_command(
-        TARGET SVMT POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy
-        ${QT_DLLS} ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}
-)
+#Leave this just for windows right now
+if (WIN32)
+    add_custom_command(
+            TARGET SVMT POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy
+            ${QT_DLLS} ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}
+    )
 
-add_custom_command(
-        TARGET SVMT POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy_directory
-        ${QT_PLATFORMS} ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/platforms
-)
+    add_custom_command(
+            TARGET SVMT POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy_directory
+            ${QT_PLATFORMS} ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/platforms
+    )
+endif ()

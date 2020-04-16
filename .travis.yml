@@ -1,0 +1,23 @@
+language: c++
+
+os:
+  - linux
+
+dist: bionic
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+      - sourceline: "ppa:beineri/opt-qt-5.14.1-bionic"
+    packages:
+      - qt514-meta-minimal
+
+script:
+  - export CC=gcc-7
+  - export CXX=g++-7
+  - mkdir build
+  - cd build
+  - ls /opt/qt514
+  - cmake ../. -DCMAKE_PREFIX_PATH="/opt/qt514/lib/cmake"
+  - make
