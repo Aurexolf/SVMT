@@ -24,5 +24,3 @@ script:
   - source /opt/qt514/bin/qt514-env.sh
   - cmake ../. -DCMAKE_PREFIX_PATH="/opt/qt514/lib/cmake"
   - make
-  - ls ../bin
-  - ../bin/SVMT
