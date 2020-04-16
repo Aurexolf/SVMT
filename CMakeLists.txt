@@ -32,7 +32,7 @@ set(CMAKE_AUTOMOC ON)
 add_executable(SVMT main.cpp Qt/SVMTMainGui.cpp Qt/SVMTMainGui.h Qt/SVMTGui.h)
 target_link_libraries(SVMT Qt5::Core Qt5::Widgets)
 #TODO:Make this not hard-coded
-target_compile_definitions(DEBUG)
+target_compile_definitions(SVMT PRIVATE DEBUG)
 
 #TODO:Make 'debug' not hard-coded
 file(GLOB QT_DLLS "${CMAKE_SOURCE_DIR}/Qt/lib/${OS}/${COMP}/debug/*")
