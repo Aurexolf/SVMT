@@ -13,16 +13,24 @@
 SVMTMainGui::SVMTMainGui(QWidget *parent) : QMainWindow{parent}, ui{new Ui::SVMT_Gui} {
     ui->setupUi(this);
 
-#if !defined(QT_PRINTSUPPORT_LIB) || !QT_CONFIG(printer)
-    ui->actionPrint->setEnabled(false);
-#endif
+    connect(ui->connectButton, SIGNAL(released()), this, SLOT(clickConnect()));
+    connect(ui->nebulaButton, SIGNAL(released()), this, SLOT(clickNebula()));
+    connect(ui->viewerButton, SIGNAL(released()), this, SLOT(clickViewer()));
 
-#if !QT_CONFIG(clipboard)
-    ui->actionCopy->setEnabled(false);
-    ui->actionPaste->setEnabled(false);
-#endif
 }
 
 SVMTMainGui::~SVMTMainGui() {
     delete ui;
+}
+
+void SVMTMainGui::clickConnect() {
+    std::cout << "Pressed Connect" << std::endl;
+}
+
+void SVMTMainGui::clickNebula() {
+    std::cout << "Pressed Nebula" << std::endl;
+}
+
+void SVMTMainGui::clickViewer() {
+    std::cout << "Pressed Viewer" << std::endl;
 }

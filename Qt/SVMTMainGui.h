@@ -19,6 +19,11 @@ public:
 
 private slots:
 
+    void clickConnect();
+
+    void clickNebula();
+
+    void clickViewer();
 
 private:
     Ui::SVMT_Gui *ui;
