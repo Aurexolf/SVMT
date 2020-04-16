@@ -4,6 +4,7 @@
 
 #include "SVMTMainGui.h"
 
+#include <iostream>
 #include <QFile>
 #include <QFileDialog>
 #include <QMessageBox>
@@ -21,6 +22,11 @@ SVMTMainGui::SVMTMainGui(QWidget *parent) : QMainWindow{parent}, ui{new Ui::SVMT
     ui->actionPaste->setEnabled(false);
 #endif
 
+#ifdef DEBUG
+    std::cout<<"It loaded"<<std::endl;
+
+    close();
+#endif
 }
 
 SVMTMainGui::~SVMTMainGui() {
