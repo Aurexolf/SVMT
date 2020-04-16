@@ -12,13 +12,16 @@ addons:
       - sourceline: "ppa:beineri/opt-qt-5.14.1-bionic"
     packages:
       - qt514-meta-minimal
+      - mesa-common-dev
+      - libglu1-mesa-dev
+
 
 script:
   - export CC=gcc-7
   - export CXX=g++-7
   - mkdir build
   - cd build
-  - ls /opt/qt514/plugins/platforms
+  - ls /opt/qt514/bin
   - source /opt/qt514/bin/qt514-env.sh
   - cmake ../. -DCMAKE_PREFIX_PATH="/opt/qt514/lib/cmake"
   - make
