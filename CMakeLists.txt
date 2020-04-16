@@ -6,6 +6,8 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 find_package(Qt5 COMPONENTS Core Widgets REQUIRED)
 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
+
 set(CMAKE_AUTOMOC ON)
 
 add_executable(SVMT main.cpp Qt/SVMTMainGui.cpp Qt/SVMTMainGui.h Qt/SVMTGui.h)
