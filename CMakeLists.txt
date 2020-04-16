@@ -29,7 +29,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 
 set(CMAKE_AUTOMOC ON)
 
-add_executable(SVMT main.cpp Qt/SVMTMainGui.cpp Qt/SVMTMainGui.h Qt/SVMTGui.h)
+add_executable(SVMT main.cpp Qt/SVMTMainGui.cpp Qt/SVMTMainGui.h Qt/SVMTGui.h Util.cpp Util.h)
 target_link_libraries(SVMT Qt5::Core Qt5::Widgets)
 
 #TODO:Make 'debug' not hard-coded

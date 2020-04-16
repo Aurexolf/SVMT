@@ -5,10 +5,12 @@
 #include "SVMTMainGui.h"
 
 #include <iostream>
+#include <QDebug>
 #include <QFile>
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QTextStream>
+#include <Util.h>
 
 SVMTMainGui::SVMTMainGui(QWidget *parent) : QMainWindow{parent}, ui{new Ui::SVMT_Gui} {
     ui->setupUi(this);
@@ -24,13 +26,15 @@ SVMTMainGui::~SVMTMainGui() {
 }
 
 void SVMTMainGui::clickConnect() {
-    std::cout << "Pressed Connect" << std::endl;
+    qDebug() << "Hostname: " << ui->hostText->text();
+    qDebug() << "Port: " << ui->portText->text().toInt();
+    qDebug() << "Username: " << ui->userText->text();
 }
 
 void SVMTMainGui::clickNebula() {
-    std::cout << "Pressed Nebula" << std::endl;
+    Util::openURL("https://localhost:8080");
 }
 
 void SVMTMainGui::clickViewer() {
-    std::cout << "Pressed Viewer" << std::endl;
+    qDebug() << "Pressed Viewer";
 }
