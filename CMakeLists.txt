@@ -3,7 +3,6 @@ project(SVMT)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-set(CMAKE_PREFIX_PATH "D:\\Qt\\5.14.2\\msvc2017_64\\lib\\cmake")
 
 find_package(Qt5 COMPONENTS Core Widgets REQUIRED)
 
